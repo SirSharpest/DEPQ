@@ -28,7 +28,11 @@ public class BST_Debugger {
 		System.out.println(myDEPQ.inspectLeast());
 
 		System.out.println(myDEPQ.inspectMost());
-		
+
+
+		System.out.println(myDEPQ.getLeast());
+
+	//	System.out.println(myDEPQ.getMost());
 	}
 
 }

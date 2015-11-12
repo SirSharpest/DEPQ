@@ -41,7 +41,7 @@ public class nah26DEPQ implements DEPQ {
      * @return returns the smallest element in the DEPQ
      */
     public Comparable getLeast() {
-        return null;
+        return BST.getLeast(BST.getRoot()).getValue();
     }
 
     /**
@@ -50,7 +50,8 @@ public class nah26DEPQ implements DEPQ {
      * @return returns the largest element in the DEPQ
      */
     public Comparable getMost() {
-        return null;
+
+        return BST.getMost(BST.getRoot()).getValue();
     }
 
     /**
@@ -59,7 +60,7 @@ public class nah26DEPQ implements DEPQ {
      * @return returns true if the queue is empty
      */
     public boolean isEmpty() {
-        return false;
+        return BST.isEmpty();
     }
 
     /**
@@ -89,8 +90,15 @@ public class nah26DEPQ implements DEPQ {
          * Constructor for MyBST class
          */
         MyBST(){
-            
-        	
+        }
+
+        /**
+         * Gets the root node to be used in
+         * other functions
+         * @return
+         */
+        MyNode getRoot(){
+            return this.m_root;
         }
 
         /**
@@ -162,10 +170,71 @@ public class nah26DEPQ implements DEPQ {
          * and delete it
          * @return
          */
-        MyNode getMost(){
-        	
-        	
-        	return null;
+        MyNode getMost(MyNode startNode){
+
+            //if child is null then we know it is
+            //the largest of the nodes
+            if(startNode.getRight() == null){
+
+                //First check that left branches are not dependant
+                if(startNode.getLeft() != null){
+
+                    //set the left child node, to have a new parent
+                    //aka this node's parent and to be on the right of it
+                    MyNode temp = startNode;
+                    startNode.getParent().setRight(startNode.getLeft());
+                    m_size--;
+                    return temp;
+
+                }
+
+                MyNode temp = startNode;
+                startNode.getParent().setRight(null);
+                m_size--;
+                return temp;
+            }else{
+                getMost(startNode.getRight());
+            }
+            return null;
+        }
+
+
+        /**
+         * Will find the largest node return it
+         * and delete it
+         * @return
+         */
+        MyNode getLeast(MyNode startNode){
+
+
+            if(startNode.getLeft() != null){
+                this.getLeast(startNode.getLeft());
+            }
+
+                //First check that the right branches are not dependant
+                if(startNode.getRight() != null){
+                    MyNode temp = startNode;
+                    startNode.getParent().setLeft(startNode.getRight());
+                    m_size--;
+                    return temp;
+                }
+
+                MyNode temp = startNode;
+                startNode.getParent().setLeft(null);
+                m_size--;
+                return temp;
+
+        }
+
+        /**
+         * Gets status of is empty or not
+         * @return
+         */
+        boolean isEmpty(){
+            if (m_size == 0)
+                return true;
+            else
+                return false;
         }
 
         /**
@@ -276,13 +345,22 @@ public class nah26DEPQ implements DEPQ {
             void setRight(MyNode right){
             	
             	this.m_right = right;
-            	right.setParent(this);
-            	}
+
+                if(right != null) {
+                    right.setParent(this);
+                    }
+                }
             
             void setLeft(MyNode left){
-            	
-            	this.m_left = left;
-            	left.setParent(this);
+
+
+                this.m_left = left;
+
+            	if(left!=null){
+                    left.setParent(this);
+                }
+
+
             	}
 
 

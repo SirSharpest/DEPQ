@@ -22,12 +22,12 @@ public class DEPQTest {
     DEPQ depq;
 
 
-    /*
+
     @Before
     public void setUp() {
-        depq = new TwoHeapDEPQ(); //TODO, Replace with constructor for your implemenation
+        depq = new nah26DEPQ(); //TODO, Replace with constructor for your implemenation
     }
-    */
+
 
 
     /**
