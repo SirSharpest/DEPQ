@@ -156,6 +156,17 @@ public class nah26DEPQ implements DEPQ {
         		return m_root;
         	}
         }
+        
+        /**
+         * Will find the largest node return it
+         * and delete it
+         * @return
+         */
+        MyNode getMost(){
+        	
+        	
+        	return null;
+        }
 
         /**
          * Small class which contains information about the nodes
