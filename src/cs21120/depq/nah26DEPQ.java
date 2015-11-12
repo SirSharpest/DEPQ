@@ -68,7 +68,7 @@ public class nah26DEPQ implements DEPQ {
      * @return returns the number of elements currently in the DEPQ
      */
     public int size() {
-        return 0;
+        return BST.getSize();
     }
 
 
@@ -82,18 +82,43 @@ public class nah26DEPQ implements DEPQ {
 
         //Root node
         //within should be all other nodes
-        private MyNode m_root;
-
+        private MyNode m_root = null;
+        private int m_size = 0; 
+        
         /**
          * Constructor for MyBST class
          */
         MyBST(){
-            m_root = new MyNode();
+            
+        	
         }
 
+        /**
+         * First check if the root 
+         * is empty, if not then insert it's children 
+         * @param data
+         */
         void insert(Comparable data){
 
-            m_root.insert(data);
+        	
+            if(this.m_root == null){
+            	m_root = new MyNode(data);
+            }else{
+            	
+            	//create a temp node to be inserted
+            	MyNode tempNode = new MyNode(data); 
+            	
+            	//let the node class decide where to place this new node
+            	m_root.insert(m_root, tempNode);
+            }
+            
+            //increment the size of the tree 
+            //if nothing has went wrong. 
+            this.m_size++; 
+        }
+        
+        int getSize(){
+        	return this.m_size;
         }
 
 
@@ -112,17 +137,17 @@ public class nah26DEPQ implements DEPQ {
             private MyNode m_parent = null;
             private MyNode m_left = null;
             private MyNode m_right = null;
-
+            
+            
             private Comparable m_value;
 
 
             /**
-             * constructor
-             * use this if there is already
-             * a root node
+             * Constructor for first 
+             * node
              */
-            MyNode(){
-                m_root = null;
+            MyNode(Comparable data){
+               this.m_value = data; 
             }
 
 
@@ -137,16 +162,39 @@ public class nah26DEPQ implements DEPQ {
                 this.m_parent = parentNode;
             }
 
-            //TODO: This fun
-            //As Tom pointed out
-            void insert(Comparable data){
+            /**
+             * This takes a root node
+             * and the new node and decides where to put it
+             * @param rootNode
+             * @param newNode
+             */
+            void insert(MyNode rootNode, MyNode newNode){
 
-                //newNode = new MyNode(data);
-
-                //find where it goes, then put there
-                //root - go right node - insert
-                //roots-right-child-node
-
+            	int status = rootNode.compareTo(newNode);
+            	
+            	//check if it is to go right in the tree
+            	//or to the left
+            	if(status > 0){
+            		
+            		//check if right child is empty
+            		if(rootNode.getRight() == null){
+            			rootNode.setRight(newNode);
+            		}else{
+            			//if the node is already taken then
+            			// evaluate it and so on
+            			rootNode.insert(rootNode.getRight(), newNode);
+            		}
+            		
+            	}else if(status < 0){
+            		
+            	}
+            	else if(status == 0){
+            		//if the values are the same, it should go on the right?
+            		//TODO:: Check that this is correct
+            		
+            		
+            	}
+                
             }
 
             /**
