@@ -206,24 +206,12 @@ public class nah26DEPQ implements DEPQ {
          */
         MyNode getLeast(MyNode startNode){
 
-
             if(startNode.getLeft() != null){
-                this.getLeast(startNode.getLeft());
+
+                return (this.getLeast(startNode.getLeft()));
             }
 
-                //First check that the right branches are not dependant
-                if(startNode.getRight() != null){
-                    MyNode temp = startNode;
-                    startNode.getParent().setLeft(startNode.getRight());
-                    m_size--;
-                    return temp;
-                }
-
-                MyNode temp = startNode;
-                startNode.getParent().setLeft(null);
-                m_size--;
-                return temp;
-
+            return startNode;
         }
 
         /**
