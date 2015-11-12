@@ -32,7 +32,7 @@ public class nah26DEPQ implements DEPQ {
      * @param c the element to insert into the DEPQ
      */
     public void add(Comparable c) {
-
+    	BST.insert(c);
     }
 
     /**
@@ -170,11 +170,11 @@ public class nah26DEPQ implements DEPQ {
              */
             void insert(MyNode rootNode, MyNode newNode){
 
-            	int status = rootNode.compareTo(newNode);
+            	int status = newNode.compareTo(rootNode);
             	
             	//check if it is to go right in the tree
             	//or to the left
-            	if(status > 0){
+            	if(status >= 0){
             		
             		//check if right child is empty
             		if(rootNode.getRight() == null){
@@ -187,11 +187,12 @@ public class nah26DEPQ implements DEPQ {
             		
             	}else if(status < 0){
             		
-            	}
-            	else if(status == 0){
-            		//if the values are the same, it should go on the right?
-            		//TODO:: Check that this is correct
-            		
+            		//check if left child is empty
+            		if(rootNode.getLeft() == null){
+            			rootNode.setLeft(newNode);
+            		}else{
+            			rootNode.insert(rootNode.getRight(), newNode);
+            		}
             		
             	}
                 
@@ -222,9 +223,22 @@ public class nah26DEPQ implements DEPQ {
             /*
                TODO: Set JDocs here
              */
-            void setParent(MyNode parent){this.m_parent = parent;}
-            void setRight(MyNode right){this.m_right = right;}
-            void setLeft(MyNode left){this.m_left = left;}
+            void setParent(MyNode parent){
+            	
+            	this.m_parent = parent;
+            	}
+            
+            void setRight(MyNode right){
+            	
+            	this.m_right = right;
+            	right.setParent(this);
+            	}
+            
+            void setLeft(MyNode left){
+            	
+            	this.m_left = left;
+            	left.setParent(this);
+            	}
 
 
             /**
