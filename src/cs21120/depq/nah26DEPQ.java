@@ -14,7 +14,7 @@ public class nah26DEPQ implements DEPQ {
      * @return returns the smallest element in the DEPQ
      */
     public Comparable inspectLeast() {
-        return null;
+        return BST.inspectSmallest().getValue();
     }
 
     /**
@@ -23,7 +23,7 @@ public class nah26DEPQ implements DEPQ {
      * @return returns the largest element in the DEPQ
      */
     public Comparable inspectMost() {
-        return null;
+       return BST.inspectLargest().getValue();
     }
 
     /**
@@ -120,8 +120,42 @@ public class nah26DEPQ implements DEPQ {
         int getSize(){
         	return this.m_size;
         }
+        
+        //get the largest node 
+        MyNode inspectLargest(){
+        	
+        	if(this.m_root.getRight() != null){
+        	
+        		MyNode temp = m_root;
+        		
+        		while(temp.getRight() != null){
+        			temp = temp.getRight();
+        		}
+        		//returning the largest node
+        		return temp; 
+        		
+        	}else{
+        		return m_root;
+        	}
+        }
 
-
+        //get the smallest node
+        MyNode inspectSmallest(){
+        	
+        	if(this.m_root.getLeft() != null){
+            	
+        		MyNode temp = m_root;
+        		
+        		while(temp.getLeft() != null){
+        			temp = temp.getLeft();
+        		}
+        		//returning the largest node
+        		return temp; 
+        		
+        	}else{
+        		return m_root;
+        	}
+        }
 
         /**
          * Small class which contains information about the nodes
@@ -191,7 +225,7 @@ public class nah26DEPQ implements DEPQ {
             		if(rootNode.getLeft() == null){
             			rootNode.setLeft(newNode);
             		}else{
-            			rootNode.insert(rootNode.getRight(), newNode);
+            			rootNode.insert(rootNode.getLeft(), newNode);
             		}
             		
             	}
@@ -241,6 +275,14 @@ public class nah26DEPQ implements DEPQ {
             	}
 
 
+            /**
+             * Gets the value of the node
+             * @return
+             */
+            public Comparable getValue(){
+            	return this.m_value;
+            }
+            
             /**
              * Returns 0 if equal
              * positive if greater than

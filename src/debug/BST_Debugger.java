@@ -16,6 +16,18 @@ public class BST_Debugger {
 		myDEPQ.add(2);
 		myDEPQ.add(1);
 		myDEPQ.add(3);
+		myDEPQ.add(100);
+		myDEPQ.add(-1);
+		myDEPQ.add(2);
+		myDEPQ.add(1);
+		myDEPQ.add(3);
+		myDEPQ.add(2);
+		myDEPQ.add(1);
+		myDEPQ.add(3);
+		
+		System.out.println(myDEPQ.inspectLeast());
+
+		System.out.println(myDEPQ.inspectMost());
 		
 	}
 
