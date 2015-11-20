@@ -12,7 +12,10 @@ public class BST_Debugger {
 		
 		myDEPQ.add(20);
         myDEPQ.add(30);
+        myDEPQ.add(5);
+        myDEPQ.add(2);
         myDEPQ.add(10);
+
 
 
 
@@ -23,6 +26,7 @@ public class BST_Debugger {
         System.out.println(myDEPQ.getMost());
         System.out.println(myDEPQ.getMost());
         System.out.println(myDEPQ.getMost());
+        System.out.println(myDEPQ.getLeast());
 
 
 	}

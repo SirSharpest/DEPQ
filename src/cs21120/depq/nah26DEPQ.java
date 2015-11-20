@@ -205,22 +205,9 @@ public class nah26DEPQ implements DEPQ {
                     //if this node is the root then
                     //it will need to be replaced by the next left node
                     if(startNode.getLeft() != null){
-
+                        //setting a new root node
                         setRoot(startNode.getLeft());
-
-                        //startNode.replaceRoot(startNode.getLeft());
-                        //TODO Not copying properly
-
-                        /*
-                        startNode.setValue(startNode.getLeft().getValue());
-                        startNode.setRight(startNode.getLeft().getRight());
-                        startNode.setLeft(startNode.getLeft());
-                        //set node to be root
-                        startNode.setIsRoot(true);
-                        startNode.setParent(null);
-
-                        */
-                        //return the old root node
+                       //return the node that has now been removed
                         return tmp;
                     }
                     //if this node is the root and has no children
@@ -248,10 +235,7 @@ public class nah26DEPQ implements DEPQ {
                 }
             }
 
-
-
             return null;
-
         }
 
 
@@ -262,28 +246,54 @@ public class nah26DEPQ implements DEPQ {
          */
         MyNode getLeast(MyNode startNode){
 
-            if(startNode.getLeft() != null){
-
-                return (this.getLeast(startNode.getLeft()));
-            }
-
-            //stores the value of the node to be returned
-            //as replacing it with it's child will
-            //cause return issues
+            //Temp storage for the node as it will be unable to return
+            //when it has been destroyed
             MyNode tmp = startNode;
 
-            //if both nodes are null then we can kill the parents link
-            //to its left child
-            if(startNode.getRight() == null && startNode.getLeft() == null){
-                startNode.getParent().setLeft(null);
+            //check if this is the current smallest node
+            if(startNode.getLeft() != null){
+                //if it isn't the current left most node
+                //drop another level and recurse
+                return getLeast(startNode.getLeft());
             }
-            //if there is a right child  let it
-            //replace it's parent when it's removed
-            else if(startNode.getRight() != null){
-                startNode.getParent().setLeft(startNode.getRight());
+            else if(startNode.getLeft() == null){
+
+                //Check if the current node is the root
+                if(startNode.isRoot()){
+                    //if this node is the root then
+                    //it will need to be replaced by the next right node
+                    if(startNode.getRight() != null){
+                        //setting a new root node
+                        setRoot(startNode.getRight());
+                        //return the node that has now been removed
+                        return tmp;
+                    }
+                    //if this node is the root and has no children
+                    else if(startNode.getRight() == null){
+                        startNode = null;
+                        return tmp;
+                    }
+                }
+                //if the node is not the root and is left most
+                //then we proceed to remove this node and replace
+                //with the left child
+                else if(startNode.isRoot() == false){
+                    //check if there is a child on the right
+                    if(startNode.getRight() != null){
+                        //if there are right children now
+                        //replace it
+                        startNode.getParent().setLeft(startNode.getRight());
+                        return tmp;
+                    }
+                    //else if there is no right child
+                    else if(startNode.getRight() == null){
+                        startNode.getParent().setLeft(null);
+                        return tmp;
+                    }
+                }
             }
 
-            return tmp;
+            return null;
         }
 
         /**
