@@ -101,6 +101,16 @@ public class nah26DEPQ implements DEPQ {
         }
 
         /**
+         * Changes the root to the node specified
+         * @param newRoot
+         */
+        void setRoot(MyNode newRoot){
+            this.m_root = newRoot;
+            this.m_root.setParent(null);
+            this.m_root.setIsRoot(true);
+        }
+
+        /**
          * First check if the root 
          * is empty, if not then insert it's children 
          * @param data
@@ -196,15 +206,20 @@ public class nah26DEPQ implements DEPQ {
                     //it will need to be replaced by the next left node
                     if(startNode.getLeft() != null){
 
+                        setRoot(startNode.getLeft());
+
                         //startNode.replaceRoot(startNode.getLeft());
                         //TODO Not copying properly
 
+                        /*
                         startNode.setValue(startNode.getLeft().getValue());
                         startNode.setRight(startNode.getLeft().getRight());
                         startNode.setLeft(startNode.getLeft());
                         //set node to be root
                         startNode.setIsRoot(true);
                         startNode.setParent(null);
+
+                        */
                         //return the old root node
                         return tmp;
                     }
@@ -411,22 +426,6 @@ public class nah26DEPQ implements DEPQ {
 
             	}
 
-
-            /**
-             * This is a method that
-             * will replace this node with another one
-             */
-            private void replaceRoot(MyNode replacement){
-
-                //Set all the values correctly
-                //that suit what a root looks like
-                this.setIsRoot(true);
-                this.setParent(null);
-                this.setRight(replacement.getRight());
-                this.setLeft(replacement.getLeft());
-                this.setValue(replacement.getValue());
-
-            }
 
             /**
              * Gets the value of the node
