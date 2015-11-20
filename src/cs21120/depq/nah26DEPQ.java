@@ -50,7 +50,6 @@ public class nah26DEPQ implements DEPQ {
      * @return returns the largest element in the DEPQ
      */
     public Comparable getMost() {
-
         return BST.getMost(BST.getRoot()).getValue();
     }
 
@@ -106,11 +105,12 @@ public class nah26DEPQ implements DEPQ {
          * is empty, if not then insert it's children 
          * @param data
          */
-        void insert(Comparable data){
+        void insert(Comparable<MyNode> data){
 
         	
             if(this.m_root == null){
             	m_root = new MyNode(data);
+                m_root.setIsRoot(true);
             }else{
             	
             	//create a temp node to be inserted
@@ -170,32 +170,73 @@ public class nah26DEPQ implements DEPQ {
          * and delete it
          * @return
          */
-        MyNode getMost(MyNode startNode){
+        MyNode getMost(MyNode startNode) {
 
-            //if child is null then we know it is
-            //the largest of the nodes
-            if(startNode.getRight() == null){
+            /**
+             *TODO Get the right most node
+             * TODO if there is no right node &&  current node is root the replace from the left
+             * TODO also check that left is a thing too
+             */
 
-                //First check that left branches are not dependant
-                if(startNode.getLeft() != null){
+            //Temp storage for the node as it will be unable to return
+            //when it has been destroyed
+            MyNode tmp = startNode;
 
-                    //set the left child node, to have a new parent
-                    //aka this node's parent and to be on the right of it
-                    MyNode temp = startNode;
-                    startNode.getParent().setRight(startNode.getLeft());
-                    m_size--;
-                    return temp;
-
-                }
-
-                MyNode temp = startNode;
-                startNode.getParent().setRight(null);
-                m_size--;
-                return temp;
-            }else{
-                getMost(startNode.getRight());
+            //check if this is the current largest node
+            if(startNode.getRight() != null){
+                //if it isn't the current right most node
+                //drop another level and recurse
+                return getMost(startNode.getRight());
             }
+            else if(startNode.getRight() == null){
+
+                //Check if the current node is the root
+                if(startNode.isRoot()){
+                    //if this node is the root then
+                    //it will need to be replaced by the next left node
+                    if(startNode.getLeft() != null){
+
+                        //startNode.replaceRoot(startNode.getLeft());
+                        //TODO Not copying properly
+
+                        startNode.setValue(startNode.getLeft().getValue());
+                        startNode.setRight(startNode.getLeft().getRight());
+                        startNode.setLeft(startNode.getLeft());
+                        //set node to be root
+                        startNode.setIsRoot(true);
+                        startNode.setParent(null);
+                        //return the old root node
+                        return tmp;
+                    }
+                    //if this node is the root and has no children
+                    else if(startNode.getLeft() == null){
+                        startNode = null;
+                        return tmp;
+                    }
+                }
+                //if the node is not the root and is right most
+                //then we proceed to remove this node and replace
+                //with the left child
+                else if(startNode.isRoot() == false){
+                    //check if there is a child on the left
+                    if(startNode.getLeft() != null){
+                        //if there are left children now
+                        //replace it
+                        startNode.getParent().setRight(startNode.getLeft());
+                        return tmp;
+                    }
+                    //else if there is no right child
+                    else if(startNode.getLeft() == null){
+                        startNode.getParent().setRight(null);
+                        return tmp;
+                    }
+                }
+            }
+
+
+
             return null;
+
         }
 
 
@@ -211,7 +252,23 @@ public class nah26DEPQ implements DEPQ {
                 return (this.getLeast(startNode.getLeft()));
             }
 
-            return startNode;
+            //stores the value of the node to be returned
+            //as replacing it with it's child will
+            //cause return issues
+            MyNode tmp = startNode;
+
+            //if both nodes are null then we can kill the parents link
+            //to its left child
+            if(startNode.getRight() == null && startNode.getLeft() == null){
+                startNode.getParent().setLeft(null);
+            }
+            //if there is a right child  let it
+            //replace it's parent when it's removed
+            else if(startNode.getRight() != null){
+                startNode.getParent().setLeft(startNode.getRight());
+            }
+
+            return tmp;
         }
 
         /**
@@ -239,10 +296,10 @@ public class nah26DEPQ implements DEPQ {
             private MyNode m_parent = null;
             private MyNode m_left = null;
             private MyNode m_right = null;
+            private boolean m_isRoot = false;
             
             
             private Comparable m_value;
-
 
             /**
              * Constructor for first 
@@ -263,6 +320,9 @@ public class nah26DEPQ implements DEPQ {
                 this.m_value = value;
                 this.m_parent = parentNode;
             }
+
+
+
 
             /**
              * This takes a root node
@@ -353,11 +413,31 @@ public class nah26DEPQ implements DEPQ {
 
 
             /**
+             * This is a method that
+             * will replace this node with another one
+             */
+            private void replaceRoot(MyNode replacement){
+
+                //Set all the values correctly
+                //that suit what a root looks like
+                this.setIsRoot(true);
+                this.setParent(null);
+                this.setRight(replacement.getRight());
+                this.setLeft(replacement.getLeft());
+                this.setValue(replacement.getValue());
+
+            }
+
+            /**
              * Gets the value of the node
              * @return
              */
             public Comparable getValue(){
             	return this.m_value;
+            }
+
+            public void setValue(Comparable value){
+                this.m_value = value;
             }
             
             /**
@@ -369,6 +449,14 @@ public class nah26DEPQ implements DEPQ {
              */
             public int compareTo(MyNode myNode) {
                 return this.m_value.compareTo(myNode.m_value);
+            }
+
+            public boolean isRoot() {
+                return m_isRoot;
+            }
+
+            public void setIsRoot(boolean m_isRoot) {
+                this.m_isRoot = m_isRoot;
             }
         }
 
