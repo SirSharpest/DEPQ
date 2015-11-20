@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="816059b8-3ea4-4c6a-b7b1-7ab3d8c99d7d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cs21120/depq/nah26DEPQ.java" afterPath="$PROJECT_DIR$/src/cs21120/depq/nah26DEPQ.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/debug/BST_Debugger.java" afterPath="$PROJECT_DIR$/src/debug/BST_Debugger.java" />
     </list>
     <ignored path="DEPQ.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -30,11 +28,9 @@
       <file leaf-file-name="nah26DEPQ.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/cs21120/depq/nah26DEPQ.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="2.6363637">
-              <caret line="283" column="36" selection-start-line="283" selection-start-column="36" selection-end-line="283" selection-end-column="36" />
-              <folding>
-                <element signature="class#MyNode#0;class#MyBST#0;class#nah26DEPQ#0" expanded="false" />
-              </folding>
+            <state vertical-scroll-proportion="-5.3991594">
+              <caret line="213" column="85" selection-start-line="213" selection-start-column="85" selection-end-line="213" selection-end-column="85" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -73,8 +69,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/cs21120/depq/DEPQTest.java" />
-        <option value="$PROJECT_DIR$/src/cs21120/depq/nah26DEPQ.java" />
         <option value="$PROJECT_DIR$/src/debug/BST_Debugger.java" />
+        <option value="$PROJECT_DIR$/src/cs21120/depq/nah26DEPQ.java" />
       </list>
     </option>
   </component>
@@ -550,7 +546,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32939914" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.265745" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22734255" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32939914" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2489019" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -598,9 +594,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="class#MyNode#0;class#MyBST#0;class#nah26DEPQ#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -624,9 +618,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="class#MyNode#0;class#MyBST#0;class#nah26DEPQ#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -642,9 +634,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="class#MyNode#0;class#MyBST#0;class#nah26DEPQ#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -681,11 +671,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cs21120/depq/nah26DEPQ.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.6363637">
-          <caret line="283" column="36" selection-start-line="283" selection-start-column="36" selection-end-line="283" selection-end-column="36" />
-          <folding>
-            <element signature="class#MyNode#0;class#MyBST#0;class#nah26DEPQ#0" expanded="false" />
-          </folding>
+        <state vertical-scroll-proportion="-5.3991594">
+          <caret line="213" column="85" selection-start-line="213" selection-start-column="85" selection-end-line="213" selection-end-column="85" />
+          <folding />
         </state>
       </provider>
     </entry>

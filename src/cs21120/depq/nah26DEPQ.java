@@ -84,12 +84,15 @@ public class nah26DEPQ implements DEPQ {
         //within should be all other nodes
         private MyNode m_root = null;
         private int m_size = 0; 
-        
+
         /**
          * Constructor for MyBST class
          */
         MyBST(){
         }
+
+
+
 
         /**
          * Gets the root node to be used in
@@ -178,15 +181,10 @@ public class nah26DEPQ implements DEPQ {
         /**
          * Will find the largest node return it
          * and delete it
-         * @return
+         * @return the largest node
          */
         MyNode getMost(MyNode startNode) {
 
-            /**
-             *TODO Get the right most node
-             * TODO if there is no right node &&  current node is root the replace from the left
-             * TODO also check that left is a thing too
-             */
 
             //Temp storage for the node as it will be unable to return
             //when it has been destroyed
@@ -212,6 +210,8 @@ public class nah26DEPQ implements DEPQ {
                     }
                     //if this node is the root and has no children
                     else if(startNode.getLeft() == null){
+                        //TODO:: Ensure that the scope of this is correct
+                        //TODO:: There are more entries like this that need corrected
                         startNode = null;
                         return tmp;
                     }
@@ -242,7 +242,7 @@ public class nah26DEPQ implements DEPQ {
         /**
          * Will find the largest node return it
          * and delete it
-         * @return
+         * @return the smallest node
          */
         MyNode getLeast(MyNode startNode){
 
