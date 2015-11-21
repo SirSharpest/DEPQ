@@ -1,5 +1,7 @@
 package cs21120.depq;
 
+import java.awt.*;
+
 /**
  * Created by nathan on 03/11/15.
  * TODO: Follow Bernie's BB lectures on this
@@ -108,9 +110,16 @@ public class nah26DEPQ implements DEPQ {
          * @param newRoot
          */
         void setRoot(MyNode newRoot){
-            this.m_root = newRoot;
-            this.m_root.setParent(null);
-            this.m_root.setIsRoot(true);
+
+            //this is done to ensure no errors
+            //if removing all nodes from a tree
+            if(newRoot != null) {
+                this.m_root = newRoot;
+                this.m_root.setParent(null);
+                this.m_root.setIsRoot(true);
+            }else{
+                this.m_root = null;
+            }
         }
 
         /**
@@ -120,7 +129,6 @@ public class nah26DEPQ implements DEPQ {
          */
         void insert(Comparable<MyNode> data){
 
-        	
             if(this.m_root == null){
             	m_root = new MyNode(data);
                 m_root.setIsRoot(true);
@@ -205,14 +213,17 @@ public class nah26DEPQ implements DEPQ {
                     if(startNode.getLeft() != null){
                         //setting a new root node
                         setRoot(startNode.getLeft());
+                        //size will need to be reduced by 1
+                        this.m_size--;
                        //return the node that has now been removed
                         return tmp;
                     }
                     //if this node is the root and has no children
                     else if(startNode.getLeft() == null){
-                        //TODO:: Ensure that the scope of this is correct
-                        //TODO:: There are more entries like this that need corrected
-                        startNode = null;
+                        //size will need to be reduced by 1
+                        this.m_size--;
+                        setRoot(null);
+                        //startNode = null;
                         return tmp;
                     }
                 }
@@ -222,6 +233,8 @@ public class nah26DEPQ implements DEPQ {
                 else if(startNode.isRoot() == false){
                     //check if there is a child on the left
                     if(startNode.getLeft() != null){
+                        //size will need to be reduced by 1
+                        this.m_size--;
                         //if there are left children now
                         //replace it
                         startNode.getParent().setRight(startNode.getLeft());
@@ -229,6 +242,8 @@ public class nah26DEPQ implements DEPQ {
                     }
                     //else if there is no right child
                     else if(startNode.getLeft() == null){
+                        //size will need to be reduced by 1
+                        this.m_size--;
                         startNode.getParent().setRight(null);
                         return tmp;
                     }
@@ -250,6 +265,7 @@ public class nah26DEPQ implements DEPQ {
             //when it has been destroyed
             MyNode tmp = startNode;
 
+
             //check if this is the current smallest node
             if(startNode.getLeft() != null){
                 //if it isn't the current left most node
@@ -265,12 +281,17 @@ public class nah26DEPQ implements DEPQ {
                     if(startNode.getRight() != null){
                         //setting a new root node
                         setRoot(startNode.getRight());
+                        //size will need to be reduced by 1
+                        this.m_size--;
                         //return the node that has now been removed
                         return tmp;
                     }
                     //if this node is the root and has no children
                     else if(startNode.getRight() == null){
-                        startNode = null;
+                        //size will need to be reduced by 1
+                        this.m_size--;
+
+                        setRoot(null);
                         return tmp;
                     }
                 }
@@ -283,11 +304,15 @@ public class nah26DEPQ implements DEPQ {
                         //if there are right children now
                         //replace it
                         startNode.getParent().setLeft(startNode.getRight());
+                        //size will need to be reduced by 1
+                        this.m_size--;
                         return tmp;
                     }
                     //else if there is no right child
                     else if(startNode.getRight() == null){
                         startNode.getParent().setLeft(null);
+                        //size will need to be reduced by 1
+                        this.m_size--;
                         return tmp;
                     }
                 }
@@ -322,6 +347,8 @@ public class nah26DEPQ implements DEPQ {
             private MyNode m_left = null;
             private MyNode m_right = null;
             private boolean m_isRoot = false;
+            private int m_leftDepth = 0;
+            private int m_rightDepth = 0;
             
             
             private Comparable m_value;
@@ -425,17 +452,34 @@ public class nah26DEPQ implements DEPQ {
                 }
             
             void setLeft(MyNode left){
-
-
                 this.m_left = left;
-
             	if(left!=null){
                     left.setParent(this);
                 }
-
-
             	}
 
+
+            public Point getTreeHeight(){
+                m_leftDepth = 0;
+                m_rightDepth = 0;
+
+                getLeftHeight(this);
+                //TODO right height and AVL
+
+                Point result = new Point(m_leftDepth,m_rightDepth);
+                return result;
+            }
+
+            private int getLeftHeight(MyNode node){
+
+                this.m_leftDepth++;
+
+                if(node.getLeft()!= null){
+                    getLeftHeight(node.getLeft());
+                }
+
+                return m_leftDepth;
+            }
 
             /**
              * Gets the value of the node
