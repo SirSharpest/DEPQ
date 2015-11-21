@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="816059b8-3ea4-4c6a-b7b1-7ab3d8c99d7d" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cs21120/depq/nah26DEPQ.java" afterPath="$PROJECT_DIR$/src/cs21120/depq/nah26DEPQ.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/debug/BST_Debugger.java" afterPath="$PROJECT_DIR$/src/debug/BST_Debugger.java" />
     </list>
     <ignored path="DEPQ.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,50 +27,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="nah26DEPQ.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="nah26DEPQ.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cs21120/depq/nah26DEPQ.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.3436807">
-              <caret line="109" column="38" selection-start-line="109" selection-start-column="38" selection-end-line="109" selection-end-column="38" />
-              <folding>
-                <element signature="e#383#384#0" expanded="true" />
-                <element signature="e#438#439#0" expanded="true" />
-                <element signature="e#639#640#0" expanded="true" />
-                <element signature="e#692#693#0" expanded="true" />
-                <element signature="e#839#840#0" expanded="true" />
-                <element signature="e#865#866#0" expanded="true" />
-                <element signature="e#1045#1046#0" expanded="true" />
-                <element signature="e#1106#1107#0" expanded="true" />
-                <element signature="e#1283#1284#0" expanded="true" />
-                <element signature="e#1343#1344#0" expanded="true" />
-                <element signature="e#1483#1484#0" expanded="true" />
-                <element signature="e#1519#1520#0" expanded="true" />
-                <element signature="e#1671#1672#0" expanded="true" />
-                <element signature="e#1707#1708#0" expanded="true" />
-                <element signature="e#2303#2304#0" expanded="true" />
-                <element signature="e#2345#2346#0" expanded="true" />
-                <element signature="e#3371#3372#0" expanded="true" />
-                <element signature="e#3410#3411#0" expanded="true" />
-                <element signature="class#MyNode#0;class#MyBST#0;class#nah26DEPQ#0" expanded="false" />
-                <element signature="e#9180#9181#0" expanded="true" />
-                <element signature="e#9231#9232#0" expanded="true" />
-                <element signature="e#10811#10812#0" expanded="true" />
-                <element signature="e#10863#10864#0" expanded="true" />
-                <element signature="e#10987#10988#0" expanded="true" />
-                <element signature="e#11037#11038#0" expanded="true" />
-                <element signature="e#11162#11163#0" expanded="true" />
-                <element signature="e#11213#11214#0" expanded="true" />
-                <element signature="e#11951#11952#0" expanded="true" />
-                <element signature="e#11999#12000#0" expanded="true" />
-                <element signature="e#12052#12053#0" expanded="true" />
-                <element signature="e#12104#12105#0" expanded="true" />
-                <element signature="e#12362#12363#0" expanded="true" />
-                <element signature="e#12439#12440#0" expanded="true" />
-                <element signature="e#12478#12479#0" expanded="true" />
-                <element signature="e#12525#12526#0" expanded="true" />
-                <element signature="e#12580#12581#0" expanded="true" />
-                <element signature="e#12636#12637#0" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="0.0">
+              <caret line="466" column="43" selection-start-line="466" selection-start-column="43" selection-end-line="466" selection-end-column="43" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -83,11 +47,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BST_Debugger.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="BST_Debugger.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/debug/BST_Debugger.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.50840336">
+              <caret line="29" column="45" selection-start-line="29" selection-start-column="45" selection-end-line="29" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -146,9 +110,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -219,6 +180,9 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -575,7 +539,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="0" width="1368" height="744" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -584,7 +548,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32939914" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.265745" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22734255" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32939914" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2489019" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -602,6 +566,14 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -624,45 +596,55 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#383#384#0" expanded="true" />
-            <element signature="e#438#439#0" expanded="true" />
-            <element signature="e#639#640#0" expanded="true" />
-            <element signature="e#692#693#0" expanded="true" />
-            <element signature="e#839#840#0" expanded="true" />
-            <element signature="e#865#866#0" expanded="true" />
-            <element signature="e#1045#1046#0" expanded="true" />
-            <element signature="e#1106#1107#0" expanded="true" />
-            <element signature="e#1283#1284#0" expanded="true" />
-            <element signature="e#1343#1344#0" expanded="true" />
-            <element signature="e#1483#1484#0" expanded="true" />
-            <element signature="e#1519#1520#0" expanded="true" />
-            <element signature="e#1671#1672#0" expanded="true" />
-            <element signature="e#1707#1708#0" expanded="true" />
-            <element signature="e#2303#2304#0" expanded="true" />
-            <element signature="e#2345#2346#0" expanded="true" />
-            <element signature="e#3371#3372#0" expanded="true" />
-            <element signature="e#3410#3411#0" expanded="true" />
-            <element signature="class#MyNode#0;class#MyBST#0;class#nah26DEPQ#0" expanded="false" />
-            <element signature="e#9180#9181#0" expanded="true" />
-            <element signature="e#9231#9232#0" expanded="true" />
-            <element signature="e#10811#10812#0" expanded="true" />
-            <element signature="e#10863#10864#0" expanded="true" />
-            <element signature="e#10987#10988#0" expanded="true" />
-            <element signature="e#11037#11038#0" expanded="true" />
-            <element signature="e#11162#11163#0" expanded="true" />
-            <element signature="e#11213#11214#0" expanded="true" />
-            <element signature="e#11951#11952#0" expanded="true" />
-            <element signature="e#11999#12000#0" expanded="true" />
-            <element signature="e#12052#12053#0" expanded="true" />
-            <element signature="e#12104#12105#0" expanded="true" />
-            <element signature="e#12362#12363#0" expanded="true" />
-            <element signature="e#12439#12440#0" expanded="true" />
-            <element signature="e#12478#12479#0" expanded="true" />
-            <element signature="e#12525#12526#0" expanded="true" />
-            <element signature="e#12580#12581#0" expanded="true" />
-            <element signature="e#12636#12637#0" expanded="true" />
-          </folding>
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cs21120/depq/DEPQ.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/debug/BST_Debugger.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="28" column="46" selection-start-line="28" selection-start-column="46" selection-end-line="28" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cs21120/depq/nah26DEPQ.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cs21120/depq/DEPQ.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/debug/BST_Debugger.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cs21120/depq/nah26DEPQ.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -678,45 +660,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#383#384#0" expanded="true" />
-            <element signature="e#438#439#0" expanded="true" />
-            <element signature="e#639#640#0" expanded="true" />
-            <element signature="e#692#693#0" expanded="true" />
-            <element signature="e#839#840#0" expanded="true" />
-            <element signature="e#865#866#0" expanded="true" />
-            <element signature="e#1045#1046#0" expanded="true" />
-            <element signature="e#1106#1107#0" expanded="true" />
-            <element signature="e#1283#1284#0" expanded="true" />
-            <element signature="e#1343#1344#0" expanded="true" />
-            <element signature="e#1483#1484#0" expanded="true" />
-            <element signature="e#1519#1520#0" expanded="true" />
-            <element signature="e#1671#1672#0" expanded="true" />
-            <element signature="e#1707#1708#0" expanded="true" />
-            <element signature="e#2303#2304#0" expanded="true" />
-            <element signature="e#2345#2346#0" expanded="true" />
-            <element signature="e#3371#3372#0" expanded="true" />
-            <element signature="e#3410#3411#0" expanded="true" />
-            <element signature="class#MyNode#0;class#MyBST#0;class#nah26DEPQ#0" expanded="false" />
-            <element signature="e#9180#9181#0" expanded="true" />
-            <element signature="e#9231#9232#0" expanded="true" />
-            <element signature="e#10811#10812#0" expanded="true" />
-            <element signature="e#10863#10864#0" expanded="true" />
-            <element signature="e#10987#10988#0" expanded="true" />
-            <element signature="e#11037#11038#0" expanded="true" />
-            <element signature="e#11162#11163#0" expanded="true" />
-            <element signature="e#11213#11214#0" expanded="true" />
-            <element signature="e#11951#11952#0" expanded="true" />
-            <element signature="e#11999#12000#0" expanded="true" />
-            <element signature="e#12052#12053#0" expanded="true" />
-            <element signature="e#12104#12105#0" expanded="true" />
-            <element signature="e#12362#12363#0" expanded="true" />
-            <element signature="e#12439#12440#0" expanded="true" />
-            <element signature="e#12478#12479#0" expanded="true" />
-            <element signature="e#12525#12526#0" expanded="true" />
-            <element signature="e#12580#12581#0" expanded="true" />
-            <element signature="e#12636#12637#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -735,14 +679,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/debug/BST_Debugger.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/cs21120/depq/DEPQ.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -753,47 +689,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cs21120/depq/nah26DEPQ.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.3436807">
-          <caret line="109" column="38" selection-start-line="109" selection-start-column="38" selection-end-line="109" selection-end-column="38" />
-          <folding>
-            <element signature="e#383#384#0" expanded="true" />
-            <element signature="e#438#439#0" expanded="true" />
-            <element signature="e#639#640#0" expanded="true" />
-            <element signature="e#692#693#0" expanded="true" />
-            <element signature="e#839#840#0" expanded="true" />
-            <element signature="e#865#866#0" expanded="true" />
-            <element signature="e#1045#1046#0" expanded="true" />
-            <element signature="e#1106#1107#0" expanded="true" />
-            <element signature="e#1283#1284#0" expanded="true" />
-            <element signature="e#1343#1344#0" expanded="true" />
-            <element signature="e#1483#1484#0" expanded="true" />
-            <element signature="e#1519#1520#0" expanded="true" />
-            <element signature="e#1671#1672#0" expanded="true" />
-            <element signature="e#1707#1708#0" expanded="true" />
-            <element signature="e#2303#2304#0" expanded="true" />
-            <element signature="e#2345#2346#0" expanded="true" />
-            <element signature="e#3371#3372#0" expanded="true" />
-            <element signature="e#3410#3411#0" expanded="true" />
-            <element signature="class#MyNode#0;class#MyBST#0;class#nah26DEPQ#0" expanded="false" />
-            <element signature="e#9180#9181#0" expanded="true" />
-            <element signature="e#9231#9232#0" expanded="true" />
-            <element signature="e#10811#10812#0" expanded="true" />
-            <element signature="e#10863#10864#0" expanded="true" />
-            <element signature="e#10987#10988#0" expanded="true" />
-            <element signature="e#11037#11038#0" expanded="true" />
-            <element signature="e#11162#11163#0" expanded="true" />
-            <element signature="e#11213#11214#0" expanded="true" />
-            <element signature="e#11951#11952#0" expanded="true" />
-            <element signature="e#11999#12000#0" expanded="true" />
-            <element signature="e#12052#12053#0" expanded="true" />
-            <element signature="e#12104#12105#0" expanded="true" />
-            <element signature="e#12362#12363#0" expanded="true" />
-            <element signature="e#12439#12440#0" expanded="true" />
-            <element signature="e#12478#12479#0" expanded="true" />
-            <element signature="e#12525#12526#0" expanded="true" />
-            <element signature="e#12580#12581#0" expanded="true" />
-            <element signature="e#12636#12637#0" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.0">
+          <caret line="466" column="43" selection-start-line="466" selection-start-column="43" selection-end-line="466" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/debug/BST_Debugger.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.50840336">
+          <caret line="29" column="45" selection-start-line="29" selection-start-column="45" selection-end-line="29" selection-end-column="45" />
+          <folding />
         </state>
       </provider>
     </entry>
