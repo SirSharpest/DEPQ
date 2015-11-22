@@ -3,8 +3,26 @@ package cs21120.depq;
 import java.awt.*;
 
 /**
- * Created by nathan on 03/11/15.
- * TODO: Follow Bernie's BB lectures on this
+ * Created by Nathan on 03/11/15.
+ *
+ * This is my implementation of a BST which functions as a DEPQ
+ * It is at current unbalanced and uses O(n) for most all of its functionality.
+ *
+ * Insertion: O(n)
+ * Deletion: O(n)
+ * Searching: O(n)
+ *
+ *I have begun to implement the functions required to properly balance this tree and hopefully
+ * when I have time (holidays, when not doing assignments) I will be able to properly implement this for my own learning
+ * currently this file is hosted at github.com/sirsharpest/DEPQ and any updates will be there.
+ *
+ * The implementation of this I am happy with because it fundamentally works and does all that it needs to do, but
+ * as mentioned the time complexity being what it is, does not bode well as it will largely slow and become unsuitable
+ * as the datasets entered into it grow as well.
+ *
+ * All of the JUnit tests have succeeded and on my machine entering in 1000 unique values and then performing actions
+ * on them, takes <1second so for a small project this implementation may be enough. As I have mentioned though, not
+ * having it self balancing prevents me from making this O(log n) which would be ideal.
  */
 public class nah26DEPQ implements DEPQ {
 
@@ -83,7 +101,7 @@ public class nah26DEPQ implements DEPQ {
     private class MyBST{
 
         //Root node
-        //within should be all other nodes
+        //within it should be all other nodes
         private MyNode m_root = null;
         private int m_size = 0; 
 
@@ -94,12 +112,12 @@ public class nah26DEPQ implements DEPQ {
         }
 
 
-
-
         /**
          * Gets the root node to be used in
-         * other functions
-         * @return
+         * other functions.
+         * This is used for recursion, through the tree and is
+         * required as a starting point
+         * @return the current root node
          */
         MyNode getRoot(){
             return this.m_root;
@@ -107,7 +125,7 @@ public class nah26DEPQ implements DEPQ {
 
         /**
          * Changes the root to the node specified
-         * @param newRoot
+         * @param newRoot new root node
          */
         void setRoot(MyNode newRoot){
 
@@ -125,7 +143,7 @@ public class nah26DEPQ implements DEPQ {
         /**
          * First check if the root 
          * is empty, if not then insert it's children 
-         * @param data
+         * @param data data to be inserted into tree
          */
         void insert(Comparable<MyNode> data){
 
@@ -149,8 +167,11 @@ public class nah26DEPQ implements DEPQ {
         int getSize(){
         	return this.m_size;
         }
-        
-        //get the largest node 
+
+        /**
+         * Previews the largest node
+         * @return the largest node
+         */
         MyNode inspectLargest(){
         	
         	if(this.m_root.getRight() != null){
@@ -168,7 +189,10 @@ public class nah26DEPQ implements DEPQ {
         	}
         }
 
-        //get the smallest node
+        /**
+         * Preview the smallest node
+         * @return the smallest node
+         */
         MyNode inspectSmallest(){
         	
         	if(this.m_root.getLeft() != null){
@@ -323,7 +347,7 @@ public class nah26DEPQ implements DEPQ {
 
         /**
          * Gets status of is empty or not
-         * @return
+         * @return if tree is empty
          */
         boolean isEmpty(){
             if (m_size == 0)
@@ -366,7 +390,7 @@ public class nah26DEPQ implements DEPQ {
              * constructor
              * use this if there is already
              * a root node
-             * @param parentNode
+             * @param parentNode node to be added under
              */
             MyNode(MyNode parentNode, Comparable value){
                 this.m_value = value;
@@ -379,8 +403,8 @@ public class nah26DEPQ implements DEPQ {
             /**
              * This takes a root node
              * and the new node and decides where to put it
-             * @param rootNode
-             * @param newNode
+             * @param rootNode takes a node so that it can recurse down the tree
+             * @param newNode node to be added
              */
             void insert(MyNode rootNode, MyNode newNode){
 
@@ -413,35 +437,40 @@ public class nah26DEPQ implements DEPQ {
             }
 
             /**
-             * TODO: This function def
-             * @return
+             * Gets parent of current node
+             * @return m_parent
              */
             MyNode getParent(){
                 return this.m_parent;
             }
             /**
-             * TODO: This function def
-             * @return
+             * Gets the left child of current node
+             * @return m_left
              */
             MyNode getLeft(){
                 return this.m_left;
             }
             /**
-             * TODO: This function def
-             * @return
+             * Gets the right child of current node
+             * @return m_right
              */
             MyNode getRight(){
                 return this.m_right;
             }
 
-            /*
-               TODO: Set JDocs here
+            /**
+             * Sets the parent node given to be the new one of this node
+             * @param parent new parent node
              */
             void setParent(MyNode parent){
             	
             	this.m_parent = parent;
             	}
-            
+
+            /**
+             * Sets the right child node
+             * @param right new right child
+             */
             void setRight(MyNode right){
             	
             	this.m_right = right;
@@ -450,45 +479,104 @@ public class nah26DEPQ implements DEPQ {
                     right.setParent(this);
                     }
                 }
-            
+
+            /**
+             * Sets the left child node
+             * @param left new left child
+             */
             void setLeft(MyNode left){
                 this.m_left = left;
             	if(left!=null){
                     left.setParent(this);
                 }
-            	}
+            }
 
-
+            /**
+             * This will get the height a BT on its
+             * left and right
+             * @return two values, the left and right depth
+             */
             public Point getTreeHeight(){
                 m_leftDepth = 0;
                 m_rightDepth = 0;
 
                 getLeftHeight(this);
-                //TODO right height and AVL
+                getRightHeight(this);
 
                 Point result = new Point(m_leftDepth,m_rightDepth);
                 return result;
             }
 
+            /**
+             * Gets the height of a BT if taking
+             * its left most path
+             * @param node node to check height of
+             * @return the depth of the left side
+             */
             private int getLeftHeight(MyNode node){
 
                 this.m_leftDepth++;
 
                 if(node.getLeft()!= null){
+
                     getLeftHeight(node.getLeft());
                 }
+
 
                 return m_leftDepth;
             }
 
             /**
+             * Gets the height of a BT if taking
+             * its right most path
+             * @param node node to check height of
+             * @return the depth of the right side
+             */
+            private int getRightHeight(MyNode node){
+
+                this.m_rightDepth++;
+
+                if(node.getRight() != null){
+
+                    getRightHeight(node.getLeft());
+                }
+
+                return m_rightDepth;
+            }
+
+            /**
+             * Currently unused and needs modified to work correctly
+             * as does not take into account sub trees braching
+             * inwards/outwards
+             * @return if the tree is +/- 1 balanced
+             */
+            private boolean isBalanced(){
+
+                Point toCheck = getTreeHeight();
+
+                if(toCheck.x == toCheck.y ||
+                        toCheck.x == toCheck.y +1 ||
+                        toCheck.x == toCheck.y -1){
+
+                    return true;
+
+                }
+                return false;
+
+            }
+
+            /**
              * Gets the value of the node
-             * @return
+             * @return curren value
              */
             public Comparable getValue(){
             	return this.m_value;
             }
 
+            /**
+             * Sets a new value to the node
+             * @param value new value
+             */
             public void setValue(Comparable value){
                 this.m_value = value;
             }
@@ -497,17 +585,25 @@ public class nah26DEPQ implements DEPQ {
              * Returns 0 if equal
              * positive if greater than
              * negative if less than
-             * @param myNode
-             * @return
+             * @param myNode node to check against
+             * @return evaluation of node
              */
             public int compareTo(MyNode myNode) {
                 return this.m_value.compareTo(myNode.m_value);
             }
 
+            /**
+             * Checks if the node is the current root
+             * @return if is root
+             */
             public boolean isRoot() {
                 return m_isRoot;
             }
 
+            /**
+             * Sets the node to be a the root
+             * @param m_isRoot new status
+             */
             public void setIsRoot(boolean m_isRoot) {
                 this.m_isRoot = m_isRoot;
             }
